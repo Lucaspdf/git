@@ -1,0 +1,40 @@
+'''
+Um programa que é capaz cadastrar pessoas para trabalhar em uma empresa
+O programa recebe o nome, a idade e a carteira de trabalho
+Se não houver carteira de trabalho o programa termina
+porém se houver, o programa procegue com algumas perguntas como
+ano de contratação:
+salario:
+
+Quais são os dados de entrada?
+nome:, ano de nascimento, carteira de trabalho
+O que fazer com esses dados?
+Se nao houver mais carteira de trabalho haverão mais perguntas como
+ano de contratação e salário.
+Quais são as restrições?
+Não ha
+Qual seria o passo a passo do programa?
+pegar as informações de entrada, e colocar uma delas em uma condicional
+aonde se o numero for diferente de zero haverão outras perguntas
+Qual saida se espera do programa?
+ nome tem o valor Lucas
+ idade tem o valor 20
+ ctps tem o valor 3920
+ contratação tem o valor 2020
+ salario tem o valor 3000
+ aposentadoria tem o valor 53
+'''
+from datetime import datetime
+
+dados = dict()
+dados["nome"] = str(input("Nome:"))
+nasc = int(input("Ano de nascimento"))
+dados["ctps"] = int(input("Carteira de trabalho(Se não tiver digite 0):"))
+if dados["ctps"] != 0:
+    dados["contratação"] = int(input("Ano de contratação:"))
+    dados["salário"] = int(input("Salário:"))
+    dados["aposentadoria"] = (dados["idade"]+(dados["contratação"] + 35) - datetime.now().year)
+    for k, v in dados.items():
+        print(f"{k} tem como valor {v}")
+
+
